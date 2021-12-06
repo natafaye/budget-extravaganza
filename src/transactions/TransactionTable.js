@@ -1,7 +1,7 @@
 import React from 'react'
 import TransactionRow from './TransactionRow'
 
-export default function TransactionTable({ transactionList }) {
+export default function TransactionTable({ transactionList, deleteTransaction }) {
     return (
         <table className="table table-striped">
             <thead>
@@ -13,7 +13,9 @@ export default function TransactionTable({ transactionList }) {
                 </tr>
             </thead>
             <tbody>
-                { transactionList.map( transactionThing => <TransactionRow transaction={ transactionThing } /> ) }
+                { transactionList.map( transactionThing => 
+                    <TransactionRow transaction={ transactionThing } deleteTransaction={ deleteTransaction } /> 
+                ) }
             </tbody>
         </table>
     )

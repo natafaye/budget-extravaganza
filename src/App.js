@@ -11,10 +11,14 @@ export default class App extends Component {
 		}
 	}
 
+	deleteTransaction = (idToDelete) => {
+		this.setState( state => ({ transactionList: state.transactionList.filter(t => t._id !== idToDelete ) }) )
+	}
+	
 	render() {
 		return (
 			<div className="container">
-				<TransactionPage transactionList={ this.state.transactionList } />
+				<TransactionPage transactionList={ this.state.transactionList } deleteTransaction={ this.deleteTransaction } />
 			</div>
 		);
 	}

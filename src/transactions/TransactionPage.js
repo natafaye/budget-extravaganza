@@ -1,7 +1,7 @@
 import React from 'react'
 import TransactionTable from './TransactionTable'
 
-export default function TransactionPage({ transactionList }) {
+export default function TransactionPage({ transactionList, deleteTransaction }) {
     return (
         <React.Fragment>
             <div className="row mb-5 mt-4">
@@ -15,7 +15,7 @@ export default function TransactionPage({ transactionList }) {
             </div>
             <div class="row mt-3">
                 <div class="col">
-                    <TransactionTable transactionList={ transactionList } />
+                    <TransactionTable transactionList={ transactionList } deleteTransaction={ deleteTransaction } />
                 </div>
             </div>
         </React.Fragment>
