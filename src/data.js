@@ -15,4 +15,12 @@ export const TRANSACTIONS = [
 ]
 
 export const CATEGORTIES = [
+    {
+        _id: 1,
+        name: "Income"
+    },
+    {
+        _id: 2,
+        name: "Something Else"
+    }
 ]
