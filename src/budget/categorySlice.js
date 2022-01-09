@@ -1,10 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { CATEGORTIES } from '../data';
+import { CATEGORIES } from '../data';
 
 const categorySlice = createSlice({
     name: "categories",
     initialState: {
-        list: CATEGORTIES
+        list: CATEGORIES
     },
     reducers: {
         updateCategory: (state, action) => {

@@ -14,13 +14,20 @@ export const TRANSACTIONS = [
     }
 ]
 
-export const CATEGORTIES = [
+export const CATEGORIES = [
+    {
+        _id: 0,
+        name: "Income",
+        target: 3000
+    },
     {
         _id: 1,
-        name: "Income"
+        name: "Rent",
+        target: 1500
     },
     {
         _id: 2,
-        name: "Something Else"
+        name: "Groceries",
+        target: 400
     }
 ]
