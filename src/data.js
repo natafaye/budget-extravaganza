@@ -1,4 +1,7 @@
 
+let currentTransactionId = 2;
+export const getTransactionId = () => currentTransactionId++;
+
 export const TRANSACTIONS = [
     {
         _id: 0,
@@ -18,7 +21,7 @@ export const CATEGORIES = [
     {
         _id: 0,
         name: "Income",
-        target: 3000
+        target: 3000,
     },
     {
         _id: 1,

@@ -1,10 +1,12 @@
 import React from 'react'
 import TransactionRow from './TransactionRow'
 import { useSelector } from 'react-redux'
+import TransactionForm from './TransactionForm';
 
-export default function TransactionTable() {
+export default function TransactionTable({ isCreating, onStopCreating }) {
     const transactionList = useSelector(state => state.transactions.list);
-    const categoryList = useSelector(state => state.categories.list);
+
+    // isCreating
 
     return (
         <table className="table table-striped">
@@ -14,15 +16,13 @@ export default function TransactionTable() {
                     <th>Notes</th>
                     <th>Amount</th>
                     <th>
-                        <select>
-                            { categoryList.map(category => <option> { category.name } </option>) }
-                        </select>
                     </th>
                 </tr>
             </thead>
             <tbody>
+                { (isCreating) ? <TransactionForm onStopCreating={ onStopCreating } key={-1} /> : <tr/> }
                 { transactionList.map( transaction => 
-                    <TransactionRow transaction={ transaction } key={transaction._id} /> 
+                    <TransactionRow transaction={ transaction } key={transaction._id} />
                 ) }
             </tbody>
         </table>

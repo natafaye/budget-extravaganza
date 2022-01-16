@@ -1,9 +1,11 @@
 import React from 'react'
 import { deleteTransaction } from './transactionSlice';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function TransactionRow({ transaction }) {
     const dispatch = useDispatch();
+
+    const category = useSelector( state => state.categories.list.find( category => category._id === transaction.categoryId ) )
 
     const onDeleteClicked = () => {
         dispatch( deleteTransaction(transaction._id) )
@@ -11,7 +13,7 @@ export default function TransactionRow({ transaction }) {
 
     return (
         <tr>
-            <td>{ transaction.categoryId }</td>
+            <td>{ category.name }</td>
             <td>{ transaction.notes }</td>
             <td>${ transaction.amount }</td>
             <td className="text-end">

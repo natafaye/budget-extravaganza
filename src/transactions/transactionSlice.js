@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { TRANSACTIONS } from '../data';
+import { getTransactionId, TRANSACTIONS } from '../data';
 
 const transactionSlice = createSlice({
     name: "transactions",
@@ -9,6 +9,7 @@ const transactionSlice = createSlice({
     },
     reducers: {
         addTransaction: (state, action) => {
+            action.payload._id = getTransactionId();
             state.list.push(action.payload)
         },
         deleteTransaction: (state, action) => {
